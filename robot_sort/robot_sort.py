@@ -98,6 +98,7 @@ class SortingRobot:
         """
         Sort the robot's list.
         """
+
         # initial ideas
         # Robot can move up and down to mimic a loop
         # there is swapping involved, and robot can only hold one item at a time it seems like
@@ -105,7 +106,18 @@ class SortingRobot:
         #
         # can this be done recursively?
         # is the light even helpful at all?
-        #
+
+        for item in self._list:
+            # pick up the first item
+            # compare it the next item
+            # might use a while loop to simplify
+            # while the bot can move right, compare and swap if greater
+            # this will bubble the highest to the right
+
+            # to save time on the way back
+            # while the robot can move left
+            ##
+            print(f"this is the item: {item}")
 
 
 if __name__ == "__main__":
