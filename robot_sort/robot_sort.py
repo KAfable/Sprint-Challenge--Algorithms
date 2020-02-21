@@ -57,8 +57,6 @@ class SortingRobot:
         """
         self._time += 1
         # Swap the held item with the list item at the robot's position
-        print(
-            f"Picking up {self._list[self._position]} and leaving behind {self._item}")
         self._item, self._list[self._position] = self._list[self._position], self._item
 
     def compare_item(self):
@@ -72,10 +70,8 @@ class SortingRobot:
         if self._item is None or self._list[self._position] is None:
             return None
         elif self._item > self._list[self._position]:
-            print(f"{self._item} is greater than {self._list[self._position]}")
             return 1
         elif self._item < self._list[self._position]:
-            print(f"{self._item} is less than {self._list[self._position]}")
             return -1
         else:
             return 0
@@ -107,13 +103,7 @@ class SortingRobot:
         # Robot can move up and down to mimic a loop
         # there is swapping involved, and robot can only hold one item at a time it seems like
         # insertion sort or bubble sort?
-        #
-        # can this be done recursively?
         # is the light even helpful at all?
-        print(f'''
-        \n Starting out with:
-        \n {self._item} in hand
-        ''')
         self.swap_item()
         for i in range(len(self._list)-1, 0, -1):
             for j in range(0, i):
