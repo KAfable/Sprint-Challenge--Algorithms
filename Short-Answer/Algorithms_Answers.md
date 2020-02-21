@@ -6,6 +6,6 @@ a) The main while loop seems to set an upper bound of n^3, which implies a possi
 
 b)
 
-c)
+c) Since it's a recursive function with just one recursive call that counts down at each time, as N grows to positive infinity, the runtime complexity ends up being linear at **O(n)**.
 
 ## Exercise II
