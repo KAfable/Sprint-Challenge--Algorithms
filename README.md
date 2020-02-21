@@ -10,26 +10,19 @@ In this week's Sprint you explored and implemented some classic algorithmic appr
 
 #### 1. Analyzing runtime _(3 points)_
 
-Given 3 blocks of code, identify the runtime of each. Justify your answer.
+~~Given 3 blocks of code, identify the runtime of each. Justify your answer.~~
 
 #### 2. Find the highest floor _(3 points)_
 
-Suppose that you have an n-story building and plenty of eggs. Suppose also that an egg gets broken if it is thrown off floor f or higher, and doesn't get broken if dropped off a floor less than floor f. Devise a strategy to determine the value of f such that the number of dropped + broken eggs is minimized.
-
-Write out your proposed algorithm in plain English or pseudocode AND give the runtime complexity of your solution.
+~~Suppose that you have an n-story building and plenty of eggs. Suppose also that an egg gets broken if it is thrown off floor f or higher, and doesn't get broken if dropped off a floor less than floor f. Devise a strategy to determine the value of f such that the number of dropped + broken eggs is minimized.~~
 
 ### Code Challenges
 
 #### 3. Use recursion to complete the `count_th()` function _(3 points)_
 
-Inside the `recursive_count_th` directory you'll find the `count_th.py` file. In this file, please add your recursive implementation to the `count_th()` method following these rules:
+~~Inside the `recursive_count_th` directory you'll find the `count_th.py` file. In this file, please add your recursive implementation to the `count_th()` method following these rules:~~
 
-- Your function should take in a signle parameter (a string `word`)
-- Your function should return a count of how many occurences of **_"th"_** occur within `word`. Case matters.
-- Your function must utilize recursion.
-  - It cannot contain any loops.
-
-Run `python test_count_th.py` to run the tests for your `count_th()` function to ensure that your implementation is correct.
+~~Run `python test_count_th.py` to run the tests for your `count_th()` function to ensure that your implementation is correct.~~
 
 #### 4. Understand, plan, & implement the Robot Sort algorithm _(6 points)_
 
