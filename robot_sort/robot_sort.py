@@ -58,6 +58,8 @@ class SortingRobot:
         self._time += 1
         # Swap the held item with the list item at the robot's position
         self._item, self._list[self._position] = self._list[self._position], self._item
+        # print(
+        # f"Picked up: {self._item}, dropped: {self._list[self._position]}")
 
     def compare_item(self):
         """
@@ -81,11 +83,13 @@ class SortingRobot:
         Turn on the robot's light
         """
         self._light = "ON"
+
     def set_light_off(self):
         """
         Turn off the robot's light
         """
         self._light = "OFF"
+
     def light_is_on(self):
         """
         Returns True if the robot's light is on and False otherwise.
@@ -96,15 +100,54 @@ class SortingRobot:
         """
         Sort the robot's list.
         """
-        # Fill this out
-        pass
+
+        # initial ideas
+        # Robot can move up and down to mimic a loop
+        # there is swapping involved, and robot can only hold one item at a time it seems like
+        # insertion sort or bubble sort?
+        # is the light even helpful at all?
+
+        for i in range(len(self._list)-1, 0, -1):
+            # print(f"\nStarting lap")
+            self.swap_item()
+            for j in range(0, i):
+                if self.compare_item() == -1:
+                    self.swap_item()
+                self.move_right()
+
+            # drop off the highest item found so far
+            # print("Dropping off highest found so far")
+            if self.compare_item() == 1:
+                self.swap_item()
+
+            # reset back to original starting position
+            while self.can_move_left():
+                self.move_left()
+
+            # print("Emptying hands")
+            self.swap_item()
+            # print(self._list)
+
+        # pick up the first item
+        # compare it the next item
+        # while the bot can move right, compare and swap if greater
+        # this will bubble the highest to the right
+
+        # to save time on the way back
+        # while the robot can move left
+        ##
 
 
 if __name__ == "__main__":
     # Test our your implementation from the command line
     # with `python robot_sort.py`
 
-    l = [15, 41, 58, 49, 26, 4, 28, 8, 61, 60, 65, 21, 78, 14, 35, 90, 54, 5, 0, 87, 82, 96, 43, 92, 62, 97, 69, 94, 99, 93, 76, 47, 2, 88, 51, 40, 95, 6, 23, 81, 30, 19, 25, 91, 18, 68, 71, 9, 66, 1, 45, 33, 3, 72, 16, 85, 27, 59, 64, 39, 32, 24, 38, 84, 44, 80, 11, 73, 42, 20, 10, 29, 22, 98, 17, 48, 52, 67, 53, 74, 77, 37, 63, 31, 7, 75, 36, 89, 70, 34, 79, 83, 13, 57, 86, 12, 56, 50, 55, 46]
+    # l = [15, 41, 58, 49, 26, 4, 28, 8, 61, 60, 65, 21, 78, 14, 35, 90, 54, 5, 0, 87, 82, 96, 43, 92, 62, 97, 69, 94, 99, 93, 76, 47, 2, 88, 51, 40, 95, 6, 23, 81, 30, 19, 25, 91, 18, 68, 71, 9, 66, 1,
+    #      45, 33, 3, 72, 16, 85, 27, 59, 64, 39, 32, 24, 38, 84, 44, 80, 11, 73, 42, 20, 10, 29, 22, 98, 17, 48, 52, 67, 53, 74, 77, 37, 63, 31, 7, 75, 36, 89, 70, 34, 79, 83, 13, 57, 86, 12, 56, 50, 55, 46]
+
+    # l = [15, 41, 58, 49, 26, 4, 28, 8, 61, 60, 65, 21]
+
+    l = [5, 4, 3, 2, 1]
 
     robot = SortingRobot(l)
 
